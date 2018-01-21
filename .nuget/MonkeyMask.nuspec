@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>MonkeyMask</id>
+    <version>$version$</version>
+    <title>Monkey Mask plugin that simplifies string masking for input controls targetting NetStandard</title>
+    <authors>Andrew Hoefling</authors>
+    <owners>Andrew Hoefling</owners>
+    <licenseUrl>https://github.com/ahoefling/monkeymask/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/ahoefling/monkeymask</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>String masking plugin for text input controls</description>
+    <summary>String masking plugin for text input controls</summary>
+    <releaseNotes>For changelog go to: https://github.com/ahoefling/MonkeyMask/blob/master/CHANGELOG.md</releaseNotes>
+    <tags>Xamarin, NetStandard</tags>
+  </metadata>
+  <files>
+    <file src="..\src\MonkeyMask.Core\bin\Release\netstandard1.0\MonkeyMask.Core.*" target="lib\netstandard1.0" />
+  </files>
+</package>

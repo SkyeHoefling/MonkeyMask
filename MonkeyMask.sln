@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27309.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{EECABED5-ACB4-464B-80D8-62798F1A34E3}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\MonkeyMask.nuspec = .nuget\MonkeyMask.nuspec
+		.nuget\NuGet.config = .nuget\NuGet.config
+		.nuget\README.md = .nuget\README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonkeyMask.Core", "src\MonkeyMask.Core\MonkeyMask.Core.csproj", "{9EF7A5DD-EA77-479C-87DD-7270FDB02903}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{2FA11DAF-3C09-4E3C-88A0-10453E9EC091}"
+	ProjectSection(SolutionItems) = preProject
+		build.cake = build.cake
+		build.ps1 = build.ps1
+		build.sh = build.sh
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9EF7A5DD-EA77-479C-87DD-7270FDB02903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EF7A5DD-EA77-479C-87DD-7270FDB02903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EF7A5DD-EA77-479C-87DD-7270FDB02903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EF7A5DD-EA77-479C-87DD-7270FDB02903}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9CA2464D-5EF6-44F9-BBB7-73A3F8D24BC4}
+	EndGlobalSection
+EndGlobal
