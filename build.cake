@@ -5,10 +5,10 @@ var SLN = "MonkeyMask.sln";
 
 Task("Libraries").Does(()=>
 {
-	NuGetRestore (SLN);
-	MSBuild (SLN, c => {
-		c.Configuration = CONFIG;
-		c.MSBuildPlatform = Cake.Common.Tools.MSBuild.MSBuildPlatform.x86;
+	NuGetRestore(SLN);
+	DotNetCoreBuild(SLN, new DotNetCoreBuildSettings
+	{
+		Configuration = CONFIG
 	});
 });
 
