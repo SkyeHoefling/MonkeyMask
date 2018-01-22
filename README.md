@@ -6,6 +6,10 @@ Monkey Mask was designed for masking strings as they are entered in an Entry fie
 
 Suppose you have an Entry Field where you would like to support formatting a phone number (123-456-7890). The library is intended to call it's `MonkeyEntry.Mask()` method with each keystroke so the value appears formatted as they continue to type.
 
+| Final Input    | Format         |
+|----------------|----------------|
+| `123-456-7890` | `###-###-####` |
+
  1. Input: `1`
  2. Input: `12`
  3. Input: `123-`
