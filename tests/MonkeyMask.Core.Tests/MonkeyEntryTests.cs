@@ -115,11 +115,25 @@ namespace MonkeyMask.Core.Tests
         }
 
         [Test]
+        public void MaskInput_Where_InputLength_is_Greater_MaxLength()
+        {
+            var input = "12345";
+            var format = "##-##";
+            var result = MonkeyEntry.Mask(input, format, 4);
+
+            Assert.IsNotEmpty(result);
+            Assert.AreEqual("12-34", result);
+        }
+
+        [Test]
         public void MaskFormattedInput_Where_InputLength_is_Greater_MaxLength()
         {
             var input = "12-345";
             var format = "##-##";
             var result = MonkeyEntry.Mask(input, format, 4);
+
+            Assert.IsNotEmpty(result);
+            Assert.AreEqual("12-34", result);
         }
 
         [Test]

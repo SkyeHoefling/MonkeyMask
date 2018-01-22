@@ -17,16 +17,18 @@ namespace MonkeyMask.Core
             {
                 return input;
             }
-            else if ((maxLength > 0 && input.Length > maxLength))
-            {
-                output = input;
-            }
             else if (input.Length > format.Length)
             {
                 output = input.Substring(0, format.Length);
-            }
+            }            
             else
             {
+                var digits = Regex.Matches(format, "#").Count;
+                if (Regex.IsMatch(input, "^[0-9]+$") && input.Length > digits)
+                {
+                    input = input.Substring(0, digits);
+                }
+
                 input = Regex.Replace(input.Replace("-", string.Empty), "[^0-9]", string.Empty);
                 if (string.IsNullOrEmpty(input) || input[input.Length - 1] == '-') return input;
 
