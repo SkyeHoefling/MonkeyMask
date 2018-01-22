@@ -17,7 +17,6 @@ Task("Tests")
 	.IsDependentOn("Libraries")
 	.Does(() =>
 {
-	Console.WriteLine("tests");
 	NUnit3($"./tests/**/bin/{ CONFIG }/**/*.Tests.dll", new NUnit3Settings());
 });
 
