@@ -9,7 +9,15 @@ namespace MonkeyMask.Core
         {
             string output = null;
 
-            if (maxLength > 0 && input.Length < maxLength)
+            if(input == null || input == string.Empty)
+            {
+                return string.Empty;
+            }
+            else if (format == null || format == string.Empty)
+            {
+                return input;
+            }
+            else if ((maxLength > 0 && input.Length > maxLength))
             {
                 output = input;
             }
