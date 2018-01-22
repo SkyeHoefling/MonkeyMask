@@ -17,6 +17,17 @@ namespace MonkeyMask.Core.Tests
         }
 
         [Test]
+        public void MaskFormattedInput_Where_FormatLength_is_Equal()
+        {
+            var input = "12-34";
+            var format = "##-##";
+            var result = MonkeyEntry.Mask(input, format);
+
+            Assert.IsNotEmpty(result);
+            Assert.AreEqual("12-34", result);
+        }
+
+        [Test]
         public void MaskInput_Where_FormatLength_is_Greater()
         {
             var input = "123";
@@ -28,9 +39,31 @@ namespace MonkeyMask.Core.Tests
         }
 
         [Test]
+        public void MaskFormattedInput_Where_FormatLength_is_Greater()
+        {
+            var input = "12-3";
+            var format = "##-##-##";
+            var result = MonkeyEntry.Mask(input, format);
+
+            Assert.IsNotEmpty(result);
+            Assert.AreEqual("12-3", result);
+        }
+
+        [Test]
         public void MaskInput_Where_FormatLength_is_Greater_And_DisplayTrailingFormatting()
         {
             var input = "123456";
+            var format = "##-##-##-##";
+            var result = MonkeyEntry.Mask(input, format);
+
+            Assert.IsNotEmpty(result);
+            Assert.AreEqual("12-34-56-", result);
+        }
+
+        [Test]
+        public void MaskFormattedInput_Where_FormatLength_is_Greater_And_DisplayTrailingFormatting()
+        {
+            var input = "12-34-56";
             var format = "##-##-##-##";
             var result = MonkeyEntry.Mask(input, format);
 
@@ -82,17 +115,22 @@ namespace MonkeyMask.Core.Tests
         }
 
         [Test]
-        public void MaskInput_Where_InputLength_is_Greater_MaxLength()
+        public void MaskFormattedInput_Where_InputLength_is_Greater_MaxLength()
         {
-            var input = "12345";
+            var input = "12-345";
             var format = "##-##";
             var result = MonkeyEntry.Mask(input, format, 4);
         }
 
         [Test]
-        public void MaskInput_Where_InputLength_is_Greater_FormatLength()
+        public void MaskFormattedInput_Where_InputLength_is_Greater_FormatLength()
         {
-            // TODO             
+            var input = "12-345";
+            var format = "##-##";
+            var result = MonkeyEntry.Mask(input, format);
+
+            Assert.IsNotEmpty(result);
+            Assert.AreEqual("12-34", result);
         }
     }
 }
