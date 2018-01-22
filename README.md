@@ -21,6 +21,9 @@ Suppose you have an Entry Field where you would like to support formatting a pho
  9. Input: `123-456-789`
  10. Input: `123-456-7890`
 
+### Limitations
+Currently MonkeyMask only supports masking digits, we will support alpha numerics in the next release
+
 ## Setup 
 
 * Available on NuGet: [![NuGet](https://img.shields.io/nuget/v/MonkeyMask.svg?label=NuGet)](https://www.nuget.org/packages/MonkeyMask)
