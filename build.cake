@@ -1,3 +1,4 @@
+#tool nuget:?package=NUnit.ConsoleRunner&version=3.7.0
 var TARGET = Argument ("target", Argument ("t", "Default"));
 var VERSION = EnvironmentVariable ("APPVEYOR_BUILD_VERSION") ?? Argument("version", "0.0.9999");
 var CONFIG = Argument("configuration", EnvironmentVariable ("CONFIGURATION") ?? "Release");
@@ -12,8 +13,15 @@ Task("Libraries").Does(()=>
 	});
 });
 
+Task("Tests")
+	.IsDependentOn("Libraries")
+	.Does(() =>
+{
+	NUnit3($"./tests/**/bin/{ CONFIG }/**/*.Tests.dll", new NUnit3Settings());
+});
+
 Task ("NuGet")
-	.IsDependentOn ("Libraries")
+	.IsDependentOn ("Tests")
 	.Does (() =>
 {
     if(!DirectoryExists("./Build/nuget/"))
